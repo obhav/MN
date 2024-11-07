@@ -43,13 +43,11 @@ print("Loss = %.3f" %test_loss)
 print("Accuracy = %.3f" %test_acc)
 
 
- n=random.randint(0,9999)
+n = random.randint(0, 9999)
 plt.imshow(x_test[n])
 plt.show()
 predicted_value = model.predict(x_test)
-plt.imshow(x_test[n])
-plt.show()
-print("Predicted value : " ,predicted_value[n])
+print('Predicted Value :', predicted_value[n].argmax())
 
 
 plt.plot(history.history[ 'accuracy'])
@@ -67,5 +65,5 @@ plt.plot(history.history['val_loss'])
 plt.title('Model Loss')
 plt.ylabel('Loss')
 plt.xlabel('Epoch')
-plt.legend(['Train', 'Validation'], loc='upper left') # Corrected the location value
+plt.legend(['Train', 'Validation'], loc='upper left') 
 plt.show()
